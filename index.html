@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+ <html lang="pt-br">
+    <head>
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width,initial-scale=1.0">
+         <title></title>
+         <link rel="stylesheet" href="styless.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+         <link rel="manifest" href="/manifest.json">
+         <link rel="styleheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+         <div id="meni-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div> 
+         
+         <style>
+            .btn-cadastrar {
+                display: inline-block;
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+ 
+            .btn-cadastrar:hover {
+                background-color: #45a049;
+            }
+
+         </style>
+     </head>
+         <body>  
+         <header class="animate__animated animate__fadeInDown">              
+            <h1>AgroConexão</h1> 
+            </header>            
+    
+         <section id="home">
+            <div class="banner">
+                <div class="banner-trext">
+                <h2 class="animate__animated animate__fadeInUp">Bem-vindo</h2>
+                <p class="animate__animated animate__fadeInUp">"Explorando as oportunidades que surgem quando o campo e a cidade se conectam."</p>
+            </div>
+        </section>
+
+        <section id="about" class="animate__animated animate__fadeIn">
+            <h2 class="animate__animated animate__fadeInUp">Sobre</h2>
+            <p>O projeto "Do Campo à Cidade: Criando Oportunidades" destaca as oportunidades oferecidas pela agricultura de precisão, uma abordagem que utiliza tecnologias avançadas para otimizar práticas agrícolas e promover uma produção mais eficiente e sustentável. Com o uso de sensores, drones e imagens de satélite, os agricultores podem monitorar e gerenciar seus cultivos com precisão, permitindo a tomada de decisões informadas que aumentam a produtividade e reduzem desperdícios.
+                Além de melhorar a eficiência e a sustentabilidade, a agricultura de precisão também fortalece a conexão entre áreas rurais e urbanas. Essa integração promove o desenvolvimento econômico, tornando a agricultura mais rentável e atraente, especialmente para os jovens. Isso resulta em alimentos mais acessíveis e de melhor qualidade para os consumidores urbanos, além de revitalizar comunidades rurais.
+                O projeto ilustra como a agricultura de precisão pode transformar a agricultura tradicional, beneficiando tanto produtores quanto consumidores e contribuindo para a melhoria da qualidade de vida e o desenvolvimento econômico equilibrado.</p>
+        </section>
+
+        <section id="about" class="animate__animated animate__fadeIn">
+            <h2 class="animate__animated animate__fadeInUp">Está curtindo o site?</h2>
+            <p> Quer ver ele completo então por favor se </p>
+             <!-- Botão para redirecionar para a página de avaliações -->
+             <a href="cadastrar.html" class="btn-cadastrar">Cadastrar-se</a>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 AgroConexão: Do Campo à Cidade. Todos os direitos reservados.</p>
+            <p>Parceiro: <a href="https://www.agrotroca.com.br" target="_blank">AgroTroca</a></p>
+        </footer>
+
+        <script src="styless.css"></script>
+        
+        <script src="scripts.js"></script>
+
+        <script>
+           if ('serviceWorker' in navigator) {
+               window.addEventListener('load', () => {
+                   navigator.serviceWorker.register('/service-worker.js').then(registration => {
+                       console.log('serviceWorker resgistro com sucesso: ', registration);
+                   }).catch(error => {
+                       console.log('falha no registro do ServiceWorker: ', error);
+                    });                    
+                });                
+            }
+        </script>
+              
+    </body>
+
+</html>

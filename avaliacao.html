@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="styles.css"> <!-- Inclua o CSS do seu projeto -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            background-image: url(Fortaleza.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            transform: translateY(-50%);
+           height: 60px;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        #reviews {
+            padding: 50px 20px;
+            background-color: #e8f5e9;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #reviews h2 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+        }
+
+        .review-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .review-form h3 {
+            color: #388e3c;
+        }
+
+        .review-form label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .review-form input, 
+        .review-form select, 
+        .review-form textarea, 
+        .review-form button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .review-form button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .review-form button:hover {
+            background-color: #45a049;
+        }
+
+        .reviews-list {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .review-item {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-item p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .review-actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .like-btn {
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .like-btn:hover {
+            background-color: #2e7d32;
+        }
+
+        .like-count {
+            font-size: 0.9em;
+        }
+
+        .btn-voltar {
+            display: block;
+            width: 200px;
+            margin: 30px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4caf50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1></h1>
+    </header>
+
+    <div class="container">
+        <section id="reviews" class="animate__animated animate__fadeIn">
+            <h2>Avaliações</h2>
+            <div class="review-form">
+                <h3>Deixe sua Avaliação</h3>
+                <form id="reviewForm">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="rating">Nota:</label>
+                    <select id="rating" name="rating" required>
+                        <option value="5">5 Estrelas</option>
+                        <option value="4">4 Estrelas</option>
+                        <option value="3">3 Estrelas</option>
+                        <option value="2">2 Estrelas</option>
+                        <option value="1">1 Estrela</option>
+                    </select>
+                    <label for="review">Comentário:</label>
+                    <textarea id="review" name="review" rows="4" required></textarea>
+                    <button type="submit">Enviar Avaliação</button>
+                </form>
+            </div>
+
+            <h3>Avaliações Recentes</h3>
+            <div class="reviews-list">
+                <div class="review-item">
+                    <p>"Acabei de visitar o site AgroConexão e fiquei impressionado com a qualidade do conteúdo e o design do site.
+                         As informações sobre agricultura de precisão são apresentadas de forma clara e acessível, o que torna fácil entender como a tecnologia pode revolucionar o setor agrícola.
+                         A navegação é intuitiva e as animações adicionam um toque moderno e dinâmico.
+                         Parabéns pelo excelente trabalho!"</p>
+                    <div class="review-actions">
+                        <button class="like-btn">Curtir</button>
+                        <span class="like-count">0 curtidas</span>
+                    </div>
+                </div>
+                <div class="review-item">
+                    <p>"Visitei o AgroConexão pela primeira vez e gostei muito do que vi.
+                         O site é extremamente informativo, com artigos bem escritos sobre a integração rural-urbana e as inovações na agricultura.
+                          As imagens são de alta qualidade e ajudam a ilustrar os pontos discutidos nos artigos. A organização do site facilita encontrar as informações que estava procurando.
+                         Recomendo a todos que se interessem por agricultura sustentável e tecnologia."</p>
+                    <div class="review-actions">
+                        <button class="like-btn">Curtir</button>
+                        <span class="like-count">0 curtidas</span>
+                    </div>
+                </div>
+                    <section>
+                    <div class="review-item">
+                        <p>"AgroConexão é um site incrível!
+                             Como alguém que se interessa por agricultura e tecnologia, encontrei muitas informações valiosas sobre práticas agrícolas modernas e sustentabilidade.
+                             A interface do site é agradável e fácil de usar. As animações e gráficos são bem-feitos e realmente ajudam a explicar os conceitos.
+                             É um recurso fantástico tanto para agricultores quanto para entusiastas do setor."</p>
+                        <div class="review-actions">
+                            <button class="like-btn">Curtir</button>
+                            <span class="like-count">0 curtidas</span>
+                        </div>
+                    </section>
+                        <div class="review-item">
+                            <p> "Fiquei muito satisfeito com minha visita ao AgroConexão.
+                                 O site oferece uma visão inspiradora sobre como a agricultura de precisão pode promover práticas sustentáveis e beneficiar tanto o meio ambiente quanto a economia.
+                                 As informações são detalhadas e bem apresentadas, com uma ênfase clara na inovação.
+                                 É ótimo ver um site dedicado a promover a sustentabilidade no campo."</p>
+                            <div class="review-actions">
+                                <button class="like-btn">Curtir</button>
+                                <span class="like-count">0 curtidas</span>
+                            </div>
+                        </div>
+                            <section>
+                            <div class="review-item">
+                                <p>"Acabei de explorar o site AgroConexão e saí com uma nova perspectiva sobre a agricultura moderna.
+                                     A combinação de conteúdo educativo, design atraente e recursos visuais faz deste site uma excelente fonte de informação.
+                                      Aprendi muito sobre como a tecnologia pode ser usada para melhorar a eficiência agrícola e promover a integração rural-urbana.
+                                     Recomendo fortemente para quem quer se aprofundar no tema."</p>
+                                <div class="review-actions">
+                                    <button class="like-btn">Curtir</button>
+                                    <span class="like-count">0 curtidas</span>
+                                </div>
+                            </section>
+                </div>
+                <!-- Adicione mais avaliações aqui -->
+            </div>
+        </section>
+
+        <!-- Botão para voltar para a página principal -->
+        <a href="inicio.html" class="btn-voltar">Voltar à Página Principal</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const likeButtons = document.querySelectorAll('.like-btn');
+
+            likeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const likeCountSpan = button.nextElementSibling;
+                    let likeCount = parseInt(likeCountSpan.textContent.split(' ')[0]);
+                    likeCountSpan.textContent = `${likeCount + 1} curtidas`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
