@@ -131,17 +131,17 @@ section h2 {
      text-align: center;
 }
 
-#what-is, #purpose, #application, #precision-agriculture, #money, #challenges, #help, #time, #curiosity {
+#what-is, #purpose, #application, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity {
      background-color: #90ee90;
      padding: 20px;
      margin: 20px;
-     background-color: #e8f5e9;
+     background-color: #8feb97;
      border-radius: 8px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #what-is h2, #purpose h2, #application h2, #precision-agriculture h2, #money h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
-     color: #228b22;
+     color: #000000;
 }
 
 #what-is h3, #purpose h3, #application h3, #precision-agriculture h3, #money h3, #challenges h3, #help h3, #time h3, #curiosity h3 {
@@ -162,11 +162,10 @@ section h2 {
 
 #gallery, #testimanials, #news, #video, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
     text-align: center;
-
+    
 }
 
-.gallery-container {
-     
+.gallery-container {    
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
@@ -231,11 +230,11 @@ section h2 {
      align-items: center;
      justify-content: center;
      text-align: center;
+
 }
 
 .testimonial {
-     
-     
+     background-color: #f9f9f9;   
      border-radius: 8px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
      transition: transform 0.2s;
@@ -244,7 +243,7 @@ section h2 {
 }
 
 .testimonial:hover {
-     color: #388e3c;
+     color: #04720a;
      transform: translateY(-5px);
      box-shadow: 0 015px rgba(0, 0, 0, 0.2);
 }
