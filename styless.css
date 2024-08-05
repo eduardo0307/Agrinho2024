@@ -129,9 +129,16 @@ section h2 {
 #about {
      background-color: #90ee90;
      text-align: center;
+     text-align: justify;
 }
 
-#what-is, #purpose, #application, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity {
+#entrar{
+     background-color: #90ee90;
+     text-align: center;
+     
+}
+
+#what-is, #purpose, #application, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity{
      background-color: #90ee90;
      padding: 20px;
      margin: 20px;
@@ -148,7 +155,7 @@ section h2 {
      text-align: left; /* Alinha o texto à esquerda */
 }
 
-#what-is p, #purpose p, #application p, #precision-agriculture p, #money p, #challenges p, #help p, #time p, #curiosity p {
+#what-is p, #purpose p, #application p, #precision-agriculture p, #money p, #challenges p, #help p, #time p, #curiosity p{
      color: #333;
      line-height: 1.6;
      font-size: 18px;
