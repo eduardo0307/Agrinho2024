@@ -155,7 +155,7 @@ section h2 {
      text-align: left; /* Alinha o texto à esquerda */
 }
 
-#what-is p, #purpose p, #application p, #precision-agriculture p, #money p, #challenges p, #help p, #time p, #curiosity p{
+#what-is p, #application p, #precision-agriculture p, #money p, #challenges p, #help p, #time p, #curiosity p{
      color: #333;
      line-height: 1.6;
      font-size: 18px;
@@ -170,6 +170,10 @@ section h2 {
 #gallery, #testimanials, #news, #video, #partners, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
     text-align: center;
     
+}
+
+#purpose p {
+     text-align: justify;
 }
 
 .gallery-container {    
@@ -230,43 +234,6 @@ section h2 {
      right: 10px;
 }
 
-#testimonial {
-     
-     display: flex;
-     flex-direction: column;
-     align-items: center;
-     justify-content: center;
-     text-align: center;
-
-}
-
-.testimonial {
-     background-color: #f9f9f9;   
-     border-radius: 8px;
-     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     transition: transform 0.2s;
-     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-     text-align: center;
-}
-
-.testimonial:hover {
-     color: #04720a;
-     transform: translateY(-5px);
-     box-shadow: 0 015px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial h3 {
-     color: #8b4513;
-     margin-top: 0;
-}
-
-.testimonial a {
-     text-decoration: none;
-     color: #1100ff;
-     font-weight: bold;
-     transition: color 0.3s ease;
-}
-
 .news-card {
      display: inline-block;
      width: 45%;
@@ -304,8 +271,8 @@ section h2 {
 }
 
 #video video {
-     width: 1000px;
-     max-width: 100%;
+     width: 800px;
+     max-width: 80%;
      height: auto;
      border: 2px solid #ddd;
      border-radius: 10px;
