@@ -147,7 +147,7 @@ section h2 {
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#what-is h2, #purpose h2, #application h2, #precision-agriculture h2, #money h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
+#what-is h2, #purpose h2, #application h2, #precision-agriculture h2, #money h2, #gallery h2, #testimonials h2, #news h2, #video h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
      color: #000000;
 }
 
@@ -424,6 +424,20 @@ footer a {
      color: #00ff00;
      text-decoration: none;
  }
+
+ #partners {
+     text-align: center;
+    
+     background-color: #228b22;
+     color: white;
+ }
+
+#partners a {
+     color: #00ff00;
+     text-decoration: none;
+
+}
+
 
 @media (max-width: 768px) {
     nav ul li {
