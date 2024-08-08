@@ -138,7 +138,7 @@ section h2 {
      
 }
 
-#what-is, #purpose, #application, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity{
+#what-is, #purpose, #application, #references, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity,  #partners {
      background-color: #90ee90;
      padding: 20px;
      margin: 20px;
@@ -147,7 +147,7 @@ section h2 {
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#what-is h2, #purpose h2, #application h2, #precision-agriculture h2, #money h2, #gallery h2, #testimonials h2, #news h2, #video h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
+#what-is h2, #purpose h2, #references h2, #application h2, #precision-agriculture h2, #money h2, #gallery h2, #testimonials h2, #news h2,  #partners h2, #video h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
      color: #000000;
 }
 
@@ -162,12 +162,12 @@ section h2 {
      text-align: left; /* Alinha o texto à esquerda */
 }
 
-#what-is ul, #purpose ul, #application ul, #precision-agriculture ul, #money ul, #challenges ul, #help ul, #time ul, #curiosity ul{
+#what-is ul, #purpose ul, #application ul,  #partners ul, #precision-agriculture ul, #money ul, #challenges ul, #help ul, #time ul, #curiosity ul{
      font-size: 18px;
      text-align: left; /* Alinha o texto à esquerda */
 }
 
-#gallery, #testimanials, #news, #video, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
+#gallery, #testimanials, #news, #video, #partners, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
     text-align: center;
     
 }
@@ -423,19 +423,38 @@ footer {
 footer a {
      color: #00ff00;
      text-decoration: none;
- }
+}
 
- #partners {
+#partners {
      text-align: center;
     
      background-color: #228b22;
      color: white;
- }
+}
+
+#partners h2 {
+     text-decoration-color: #000000;
+}
 
 #partners a {
      color: #00ff00;
      text-decoration: none;
+     text-align: center;
 
+}
+
+#references{  
+     background-color: #228b22;
+     color: white;
+}
+
+#references a {
+     color: #00ff00;
+     text-decoration: none ;
+}
+
+#references h2 {
+    text-decoration-color: #00000000;
 }
 
 
