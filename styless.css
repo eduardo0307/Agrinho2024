@@ -127,7 +127,7 @@ section h2 {
 }
 
 #about {
-     background-color: #90ee90;
+     background-color: #228b22;
      text-align: center;
      text-align: justify;
 }
@@ -138,16 +138,16 @@ section h2 {
      
 }
 
-#what-is, #purpose, #application, #references, #precision-agriculture, #money, #gallery, #testimonials, #news, #video, #challenges, #help, #time, #curiosity,  #partners {
-     background-color: #90ee90;
+#what-is, #purpose, #application, #references, #precision-agriculture, #money, #gallery, #testimonials, #news, #Video, #challenges, #help, #time, #curiosity,  #partners {
+     background-color: #228b22;
      padding: 20px;
      margin: 20px;
-     background-color: #8feb97;
+     background-color: #228b22;
      border-radius: 8px;
      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#what-is h2, #purpose h2, #references h2, #application h2, #precision-agriculture h2, #money h2, #gallery h2, #testimonials h2, #news h2,  #partners h2, #video h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
+#what-is h2, #purpose h2, #references h2, #application h2, #precision-agriculture h2, #money h2, #gallery h2, #testimonials h2, #news h2,  #partners h2, #Video h2, #challenges h2, #help h2, #time h2, #curiosity h2 {
      color: #000000;
 }
 
@@ -167,7 +167,7 @@ section h2 {
      text-align: left; /* Alinha o texto à esquerda */
 }
 
-#gallery, #testimanials, #news, #video, #partners, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
+#gallery, #testimanials, #news, #Video, #partners, #what-is, #purpose, #application, #money, #challenges, #help, #time, #curiosity  {
     text-align: center;
     
 }
@@ -265,7 +265,7 @@ section h2 {
      transition: color 0.3s ease;
 }
 
-#video {
+#Video {
      text-align: center;
      padding: 50px 0;
 }
