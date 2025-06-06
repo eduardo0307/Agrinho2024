@@ -1,89 +1,421 @@
 <!DOCTYPE html>
- <html lang="pt-br">
-    <head>
-         <meta charset="utf-8">
-         <meta name="viewport" content="width=device-width,initial-scale=1.0">
-         <title></title>
-         <link rel="stylesheet" href="styless.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
-         <link rel="manifest" href="/manifest.json">
-         <link rel="styleheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-         <div id="meni-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-         </div> 
-         
-         <style>
-            .btn-cadastrar {
-                display: inline-block;
-                background-color: #4CAF50;
-                color: white;
-                padding: 10px 20px;
-                border-radius: 4px;
-                text-decoration: none;
-                font-weight: bold;
-                transition: background-color 0.3s ease;
-            }
- 
-            .btn-cadastrar:hover {
-                background-color: #45a049;
-            }
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgroConexão - Sementes que aproximam vidas</title>
+  <style>
+    /* Reset e base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e6f2e6, #d9ead3);
+      color: #264d27;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #4caf50;
+      color: #fff;
+      padding: 1.8rem 2rem;
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.4rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+      letter-spacing: 1.1px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      background: #357a38;
+      box-shadow: inset 0 -3px 0 #2d5e2a;
+      user-select: none;
+    }
+    nav button {
+      flex: 1 1 120px;
+      padding: 14px 10px;
+      font-weight: 600;
+      color: #d1e7c4;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-size: 1rem;
+      outline-offset: 3px;
+    }
+    nav button:hover:not(.active),
+    nav button:focus-visible:not(.active) {
+      background: #2d6a28;
+      color: #a7d08c;
+      outline: 2px solid #a4d65e;
+      outline-offset: 3px;
+    }
+    nav button.active {
+      background: #a4d65e;
+      color: #264d27;
+      box-shadow: inset 0 -4px 0 #558b2f;
+      font-weight: 700;
+      outline: 3px solid #558b2f;
+      outline-offset: 2px;
+    }
+    main {
+      flex-grow: 1;
+      max-width: 960px;
+      margin: 2rem auto 3rem;
+      background: #f9fff8;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 2.2rem 3rem;
+      line-height: 1.6;
+      outline: none;
+    }
+    h2 {
+      color: #2e7d32;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #a4d65e;
+      padding-bottom: 0.4rem;
+    }
+    p, li {
+      font-size: 1.1rem;
+      color: #3a4f20;
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-left: 1.3rem;
+      margin-bottom: 1.5rem;
+      list-style-type: disc;
+      color: #466d26;
+    }
+    /* Conteúdo abas */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(15px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    /* Artigos em Histórias */
+    #historias article {
+      background: #e9f7e9;
+      border-left: 6px solid #4caf50;
+      padding: 15px 18px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 1px 1px 6px rgba(0,0,0,0.05);
+    }
+    #historias article h3 {
+      margin-bottom: 8px;
+      color: #357a38;
+    }
+    /* Vídeo Aprenda */
+    #aprenda video {
+      width: 100%;
+      max-height: 380px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(50, 90, 10, 0.3);
+      margin-top: 1rem;
+    }
+    /* Depoimentos */
+    #depoimentos blockquote {
+      font-style: italic;
+      border-left: 6px solid #7fc97f;
+      background: #d9f0d9;
+      padding: 1rem 1.4rem;
+      margin: 1.5rem 0;
+      border-radius: 10px;
+      color: #305623;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      position: relative;
+    }
+    #depoimentos cite {
+      display: block;
+      margin-top: 8px;
+      font-weight: 700;
+      text-align: right;
+      color: #2a5d20;
+    }
+    /* Galeria */
+    #galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 18px;
+    }
+    #galeria img {
+      width: 100%;
+      border-radius: 14px;
+      box-shadow: 0 2px 15px rgba(50, 90, 10, 0.3);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      object-fit: cover;
+      height: 130px;
+    }
+    #galeria img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 6px 25px rgba(50, 90, 10, 0.6);
+    }
+    /* Referências */
+    #referencias ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    #referencias ul li {
+      margin-bottom: 14px;
+      font-size: 1.1rem;
+    }
+    #referencias ul li a {
+      text-decoration: none;
+      color: #4caf50;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    #referencias ul li a:hover {
+      color: #357a38;
+      text-decoration: underline;
+    }
+    /* Responsividade */
+    @media (max-width: 720px) {
+      nav button {
+        font-size: 0.85rem;
+        padding: 12px 8px;
+      }
+      main {
+        margin: 1rem 1rem 2rem;
+        padding: 1.5rem 1.5rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
 
-         </style>
-     </head>
-         <body>  
-         <header class="animate__animated animate__fadeInDown">              
-            <h1>AgroConexão</h1> 
-            </header>            
-    
-         <section id="home">
-            <div class="banner">
-                <div class="banner-trext">
-                <h2 class="animate__animated animate__fadeInUp">Bem-vindo</h2>
-                <p class="animate__animated animate__fadeInUp">"Explorando as oportunidades que surgem quando o campo e a cidade se conectam."</p>
-            </div>
-        </section>
+<header>AgroConexão - Sementes que aproximam vidas</header>
 
-        <section id="about" class="animate__animated animate__fadeIn">
-            <h2 class="animate__animated animate__fadeInUp">Sobre nós</h2>
-            <ul>
-            <p>O projeto AgroConexão, elaborado para participar do concurso Agrinho 2024 com o tema: "Do Campo à Cidade: Colhendo Oportunidades" destaca as oportunidades oferecidas pela agricultura de precisão, uma abordagem que utiliza tecnologias avançadas para otimizar práticas agrícolas e promover uma produção mais eficiente e sustentável. Com o uso de sensores, drones e imagens de satélite, os agricultores podem monitorar e gerenciar seus cultivos com precisão, permitindo a tomada de decisões informadas que aumentam a produtividade e reduzem os desperdícios.
-                Além de melhorar a eficiência e a sustentabilidade, a agricultura de precisão também fortalece a conexão entre áreas rurais e urbanas. Essa integração promove o desenvolvimento econômico, tornando a agricultura mais rentável e atraente. Isso resulta em alimentos mais acessíveis e de melhor qualidade para os consumidores, além de revitalizar comunidades rurais.
-                O projeto ilustra como a agricultura de precisão pode transformar a agricultura tradicional, beneficiando tanto produtores quanto consumidores e contribuindo para a melhoria da qualidade de vida e o desenvolvimento econômico equilibrado.</p></ul>
-        </section>
+<nav role="tablist" aria-label="Seções do AgroConexão">
+  <button id="tab-inicio" data-tab="inicio" class="active" aria-selected="true" aria-controls="inicio" role="tab" tabindex="0">Início</button>
+  <button id="tab-historias" data-tab="historias" aria-selected="false" aria-controls="historias" role="tab" tabindex="-1">Histórias</button>
+  <button id="tab-tecnologia" data-tab="tecnologia" aria-selected="false" aria-controls="tecnologia" role="tab" tabindex="-1">Tecnologia</button>
+  <button id="tab-aprenda" data-tab="aprenda" aria-selected="false" aria-controls="aprenda" role="tab" tabindex="-1">Aprenda</button>
+  <button id="tab-depoimentos" data-tab="depoimentos" aria-selected="false" aria-controls="depoimentos" role="tab" tabindex="-1">Depoimentos</button>
+  <button id="tab-galeria" data-tab="galeria" aria-selected="false" aria-controls="galeria" role="tab" tabindex="-1">Galeria</button>
+  <button id="tab-referencias" data-tab="referencias" aria-selected="false" aria-controls="referencias" role="tab" tabindex="-1">Referências</button>
+</nav>
 
-        <section id="entrar" class="animate__animated animate__fadeIn">
-            <h2 class="animate__animated animate__fadeInUp">Está curtindo o site?</h2>
-            <p> Quer ver ele completo então por favor se </p>
-             <!-- Botão para redirecionar para a página de avaliações -->
-             <a href="cadastrar.html" class="btn-cadastrar">Cadastrar-se</a>
-        </section>
-        
-        <footer>
-            <p>&copy;®2024 AgroConexão, <a class="links" href="https://github.com/eduardo0307">@eduardo0307</a>. Todos os direitos reservados.</p>
-            <p>Parceiro: <a  target="_blank">Maicon Rodrigo dos Santos</a></p>
-        </footer>
+<main tabindex="0" aria-live="polite">
+  <section id="inicio" class="tab-content active" role="tabpanel" aria-labelledby="tab-inicio" tabindex="0">
+    <h2>Bem-vindo ao AgroConexão</h2>
+    <p>Somos uma plataforma que conecta produtores rurais, pesquisadores, e consumidores para fortalecer o agronegócio sustentável.</p>
+  </section>
 
-        <script src="styless.css"></script>
-        
-        <script src="scripts.js"></script>
+  <section id="historias" class="tab-content" role="tabpanel" aria-labelledby="tab-historias" tabindex="0">
+    <h2>Histórias inspiradoras</h2>
+    <article>
+      <h3>Do pequeno produtor ao mercado global</h3>
+      <p>Conheça a trajetória de João, que com ajuda da AgroConexão, levou sua produção de café artesanal para exportação.</p>
+    </article>
+    <article>
+      <h3>Inovação na agricultura familiar</h3>
+      <p>Maria e sua família utilizam tecnologias de agricultura de precisão para aumentar a produtividade e preservar o meio ambiente.</p>
+    </article>
+  </section>
 
-        <script>
-           if ('serviceWorker' in navigator) {
-               window.addEventListener('load', () => {
-                   navigator.serviceWorker.register('/service-worker.js').then(registration => {
-                       console.log('serviceWorker resgistro com sucesso: ', registration);
-                   }).catch(error => {
-                       console.log('falha no registro do ServiceWorker: ', error);
-                    });                    
-                });                
-            }
-        </script>
-              
-    </body>
+  <section id="tecnologia" class="tab-content" role="tabpanel" aria-labelledby="tab-tecnologia" tabindex="0">
+    <h2>Tecnologia e sustentabilidade</h2>
+    <ul>
+      <li>Monitoramento por satélite para melhor controle das lavouras.</li>
+      <li>Uso de drones para análise de saúde das plantas.</li>
+      <li>Sistemas automatizados para irrigação eficiente.</li>
+    </ul>
+  
+    <h3>Tutoriais Simples para Conectar o Campo</h3>
+    <ul>
+      <li>
+        <strong>Como usar o WhatsApp para vender seus produtos:</strong>
+        <p>Aprenda a criar grupos, enviar fotos e manter contato direto com clientes usando o WhatsApp no celular.</p>
+        <a href="https://faq.whatsapp.com/pt_br/android/23756533" target="_blank" rel="noopener noreferrer">Tutorial oficial do WhatsApp</a>
+      </li>
+      <li>
+        <strong>Configurar internet via celular (4G/5G) no campo:</strong>
+        <p>Dicas para escolher o melhor plano e configurar o roteador ou hotspot para ter acesso à internet móvel.</p>
+        <a href="https://www.techtudo.com.br/dicas-e-tutoriais/noticia/2019/10/como-usar-o-celular-como-rota..." target="_blank" rel="noopener noreferrer">Como usar celular como roteador</a>
+      </li>
+      <li>
+        <strong>Introdução ao uso de aplicativos de previsão do tempo:</strong>
+        <p>Utilize apps simples para acompanhar as condições climáticas e planejar melhor a colheita.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.accuweather.android&hl=pt_BR" target="_blank" rel="noopener noreferrer">Baixe o AccuWeather para Android</a>
+      </li>
+      <li>
+        <strong>Como criar backups de fotos e documentos usando Google Drive:</strong>
+        <p>Passo a passo para salvar seus arquivos na nuvem e evitar perdas.</p>
+        <a href="https://support.google.com/drive/answer/2424384?hl=pt-BR" target="_blank" rel="noopener noreferrer">Guia do Google Drive</a>
+      </li>
+    </ul>
 
+  <section id="aprenda" class="tab-content" role="tabpanel" aria-labelledby="tab-aprenda" tabindex="0">
+    <h2>Aprenda com nossos vídeos</h2>
+    <video controls>
+      <source src="agrotech.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeo.
+    </video>
+  </section>
+
+  <section id="depoimentos" class="tab-content" role="tabpanel" aria-labelledby="tab-depoimentos" tabindex="0">
+    <h2>Depoimentos</h2>
+    <blockquote>
+      "A AgroConexão transformou a forma como cultivamos, com tecnologia e apoio que fez toda a diferença."
+      <cite>— Carlos, produtor rural</cite>
+    </blockquote>
+    <blockquote>
+      "Uma plataforma indispensável para quem acredita em um agronegócio mais sustentável."
+      <cite>— Ana, pesquisadora</cite>
+    </blockquote>
+  </section>
+
+  <section id="galeria" class="tab-content" role="tabpanel" aria-labelledby="tab-galeria" tabindex="0">
+    <h2>Galeria de imagens</h2>
+    <div id="galeria">
+      <img src="img1.jpg" alt="Plantação saudável ao amanhecer" />
+      <img src="img2.jpg" alt="Uso de drones na lavoura" />
+      <img src="img3.jpg" alt="Colheita mecanizada eficiente" />
+    </div>
+  </section>
+
+  <section id="referencias" class="tab-content" role="tabpanel" aria-labelledby="tab-referencias" tabindex="0">
+    <h2>Referências</h2>
+    <ul>
+      <li><a href="https://www.agricultura.gov.br" target="_blank" rel="noopener noreferrer">Ministério da Agricultura</a></li>
+      <li><a href="https://www.embrapa.br" target="_blank" rel="noopener noreferrer">Embrapa</a></li>
+      <li><a href="https://www.agricultura.gov.br/assuntos/tecnologias-agropecuarias" target="_blank" rel="noopener noreferrer">Tecnologias Agropecuárias</a></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  (() => {
+    const tabs = document.querySelectorAll('nav button[role="tab"]');
+    const panels = document.querySelectorAll('main section[role="tabpanel"]');
+    const mainContent = document.querySelector('main');
+
+    // Função para ativar aba e painel
+    function activateTab(tab) {
+      tabs.forEach(t => {
+        const selected = t === tab;
+        t.classList.toggle('active', selected);
+        t.setAttribute('aria-selected', selected);
+        t.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(panel => {
+        panel.classList.toggle('active', panel.id === tab.dataset.tab);
+      });
+      // Focar no painel para acessibilidade
+      const activePanel = document.getElementById(tab.dataset.tab);
+      if (activePanel) {
+        activePanel.focus();
+      }
+    }
+
+    // Click em abas
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => activateTab(tab));
+      tab.addEventListener('keydown', e => {
+        const idx = Array.from(tabs).indexOf(tab);
+        let newIdx;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          newIdx = (idx + 1) % tabs.length;
+          tabs[newIdx].focus();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          e.preventDefault();
+          newIdx = (idx - 1 + tabs.length) % tabs.length;
+          tabs[newIdx].focus();
+        } else if (e.key === 'Home') {
+          e.preventDefault();
+          tabs[0].focus();
+        } else if (e.key === 'End') {
+          e.preventDefault();
+          tabs[tabs.length - 1].focus();
+        } else if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          activateTab(tab);
+        }
+      });
+    });
+  })();
+
+  (() => {
+  const tabs = document.querySelectorAll('nav button[role="tab"]');
+  const panels = document.querySelectorAll('main section[role="tabpanel"]');
+
+  // Função para ativar aba e painel
+  function activateTab(tab) {
+    tabs.forEach(t => {
+      const selected = t === tab;
+      t.classList.toggle('active', selected);
+      t.setAttribute('aria-selected', selected);
+      t.tabIndex = selected ? 0 : -1;
+    });
+    panels.forEach(panel => {
+      panel.classList.toggle('active', panel.id === tab.dataset.tab);
+    });
+    // Focar no painel para acessibilidade
+    const activePanel = document.getElementById(tab.dataset.tab);
+    if (activePanel) {
+      activePanel.focus();
+    }
+  }
+
+  // Função para mover o foco para a aba anterior ou próxima
+  function moveFocus(currentTab, direction) {
+    const tabsArray = Array.from(tabs);
+    let index = tabsArray.indexOf(currentTab);
+    index = (index + direction + tabsArray.length) % tabsArray.length;
+    tabsArray[index].focus();
+  }
+
+  // Eventos
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => activateTab(tab));
+    tab.addEventListener('keydown', e => {
+      switch(e.key) {
+        case 'ArrowLeft':
+          e.preventDefault();
+          moveFocus(tab, -1);
+          break;
+        case 'ArrowRight':
+          e.preventDefault();
+          moveFocus(tab, +1);
+          break;
+        case 'Home':
+          e.preventDefault();
+          tabs[0].focus();
+          break;
+        case 'End':
+          e.preventDefault();
+          tabs[tabs.length -1].focus();
+          break;
+        case 'Enter':
+        case ' ':
+          e.preventDefault();
+          activateTab(tab);
+          break;
+      }
+    });
+  });
+})();
+</script>
+
+</body>
 </html>
